@@ -45,27 +45,28 @@ function MultiForm() {
 
     return (
         <>
-            <div className="flex flex-wrap bg-blue-100 h-[100vh] wrap w-6xl m-auto justify-center items-center space-x-7">
-                <h1 className="lg:absolute lg:top-24 text-3xl font-bold text-center capitalize mt-4 text-4xl">{FormTitles[page]}</h1>
+            <div className="flex flex-wrap bg-blue-100 h-[100vh] lg:wrap w-6xl w-[100%] m-auto justify-center items-center space-x-7">
+                <h1 className="lg:absolute lg:top-24  text-3xl font-bold text-center capitalize mt-4 text-4xl">{FormTitles[page]}</h1>
                 <div>
-                    <img width="600px" src="https://cdn.dribbble.com/users/212447/screenshots/1922510/media/d3c907920b33e48ef5d57b858a23d43c.jpg?compress=1&resize=400x300&vertical=center" alt="oops" className="rounded-xl" />
+                    <img src="https://cdn.dribbble.com/users/212447/screenshots/1922510/media/d3c907920b33e48ef5d57b858a23d43c.jpg?compress=1&resize=400x300&vertical=center" alt="oops" className="rounded-xl lg:w-[600px] w-[90%]" />
                 </div>
-                <div className="w-[30%]">
+                <div className="lg:w-[30%] w-[90%]">
                     {PageDisplay()}
 
-                    <div className="flex justify-evenly">
+                    <div className="flex  flex-wrap justify-evenly">
                         <button
                             disabled={page === 0}
                             onClick={() => {
                                 setPage((currPage) => currPage - 1);
                             }}
-                            className="px-28 bg-red-600  text-white rounded-sm py-3 mt-3 text-sm font-semibold uppercase shadow hover:bg-red-700 duration-150 hover:shadow-lg active:bg-blue-800"
+                            className={`px-28 bg-red-600  text-white rounded-sm py-3 mt-3 text-sm font-semibold uppercase shadow hover:bg-red-700 duration-150 hover:shadow-lg active:bg-blue-800 ${page === 0 && "hidden"} `}
                         >
                             Prev
                         </button>
                         <button
                             onClick={() => {
                                 if (page === FormTitles.length - 1) {
+                                    toast.dismiss();
                                     toast.success("Form Submitted", { theme: "dark", position: "bottom-center" });
                                     console.log(formData);
                                 } else {
