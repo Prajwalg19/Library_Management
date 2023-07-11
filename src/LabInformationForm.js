@@ -1,41 +1,55 @@
 import React from "react";
-import "./Form.css"
 
-const LabInformationForm=({formData, setFormData})=>{
-    return(
+const LabInformationForm = ({ formData, setFormData }) => {
+    return (
         <form>
-            <div className="lab-form">
-                
-                <h1>LAB INFORMATION</h1>
-                <div className="inputbox">
-                    <input type="number" placeholder="Lab number"  value={formData.LabNumber}
+            <div>
+                <div>
+                    <input
+                        type="number"
+                        placeholder="Lab number"
+                        value={formData.LabNumber}
                         onChange={(e) => {
-                        setFormData({ ...formData, LabNumber: e.target.value });
-                        }}></input>
+                            setFormData({ ...formData, LabNumber: e.target.value });
+                        }}
+                        className="w-full  my-6 pl-2 text-xl py-3 rounded-md "
+                    />
                 </div>
-                <div className="inputbox">
-                    <input type="number" placeholder="Department number" value={formData.DepartmentNumber}
+                <div>
+                    <input
+                        type="number"
+                        placeholder="Department number"
+                        value={formData.DepartmentNumber}
                         onChange={(e) => {
-                        setFormData({ ...formData, DepartmentNumber: e.target.value });
-                        }}></input>
+                            setFormData({ ...formData, DepartmentNumber: e.target.value });
+                        }}
+                        className="w-full my-6 pl-2 text-xl py-3 rounded-md "
+                    />
                 </div>
-                <div className="inputbox">
-                    <input type="text" placeholder="Location" value={formData.Location}
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Location"
+                        value={formData.Location}
                         onChange={(e) => {
-                        setFormData({ ...formData, Location: e.target.value });
-                        }}></input>
+                            setFormData({ ...formData, Location: e.target.value });
+                        }}
+                        className="w-full  my-6 pl-2 text-xl py-3 rounded-md "
+                    />
                 </div>
-                <div className="inputbox">
-                    <input type="text" placeholder="Lab Incharge name" value={formData.LabInchargeName}
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Lab Incharge name"
+                        value={formData.LabInchargeName}
                         onChange={(e) => {
-                        setFormData({ ...formData, LabInchargeName: e.target.value });
-                        }}></input>
+                            setFormData({ ...formData, LabInchargeName: e.target.value });
+                        }}
+                        className="w-full  my-6 pl-2 text-xl py-3 rounded-md "
+                    />
                 </div>
-               
-                
             </div>
-            
         </form>
     );
-}
+};
 export default LabInformationForm;

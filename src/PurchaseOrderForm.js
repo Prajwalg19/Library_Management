@@ -1,41 +1,55 @@
 import React from "react";
-import "./Form.css"
 
-const PurchaseOrderForm=({formData,setFormData})=>{
-    return(
+const PurchaseOrderForm = ({ formData, setFormData }) => {
+    return (
         <form>
-            <div className="lab-form">
-                
-                <h1>PURCHASE OREDR DETAILS</h1>
-                <div className="inputbox">
-                    <input type="number" placeholder="Purchase Order Number" value={formData.PurchaseOrderNumber}
+            <div>
+                <div>
+                    <input
+                        type="number"
+                        placeholder="Purchase Order Number"
+                        value={formData.PurchaseOrderNumber}
                         onChange={(e) => {
-                        setFormData({ ...formData, PurchaseOrderNumber: e.target.value });
-                        }}></input>
+                            setFormData({ ...formData, PurchaseOrderNumber: e.target.value });
+                        }}
+                        className="w-full  my-6 pl-2 text-xl py-3  transition ease-in-out"
+                    />
                 </div>
-                <div className="inputbox">
-                    <input type="date" placeholder="Purchase Date" value={formData.PurchaseDate}
+                <div>
+                    <input
+                        type="date"
+                        placeholder="Purchase Date"
+                        value={formData.PurchaseDate}
                         onChange={(e) => {
-                        setFormData({ ...formData, PurchaseDate: e.target.value });
-                        }}></input>
+                            setFormData({ ...formData, PurchaseDate: e.target.value });
+                        }}
+                        className="w-full  my-6 pl-2 text-xl py-3  transition ease-in-out"
+                    ></input>
                 </div>
-                <div className="inputbox">
-                    <input type="text" placeholder="Supplier" value={formData.Supplier}
+                <div>
+                    <input
+                        type="text"
+                        placeholder="Supplier"
+                        value={formData.Supplier}
                         onChange={(e) => {
-                        setFormData({ ...formData, Supplier: e.target.value });
-                        }}></input>
+                            setFormData({ ...formData, Supplier: e.target.value });
+                        }}
+                        className="w-full  my-6 pl-2 text-xl py-3  transition ease-in-out"
+                    ></input>
                 </div>
-                <div className="inputbox">
-                    <input type="number" placeholder="Purchase Order Value"  value={formData.PurchaseOrderValue}
+                <div>
+                    <input
+                        type="number"
+                        placeholder="Purchase Order Value"
+                        value={formData.PurchaseOrderValue}
                         onChange={(e) => {
-                        setFormData({ ...formData, PurchaseOrderValue: e.target.value });
-                        }}></input>
+                            setFormData({ ...formData, PurchaseOrderValue: e.target.value });
+                        }}
+                        className="w-full  my-6 pl-2 text-xl py-3  transition ease-in-out"
+                    ></input>
                 </div>
-                 
-                
             </div>
-            
         </form>
     );
-}
+};
 export default PurchaseOrderForm;
